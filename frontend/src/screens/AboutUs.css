@@ -1,0 +1,138 @@
+/* Default use:
+  @include min-(width,4,240);
+
+  use width calculation
+  @include min-(width,4,240,'calc(100% - 240px)');
+*/
+.about-us {
+    overflow-y: hidden;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+.about-us .container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  perspective: 3px;
+}
+
+.about-us section {
+  background-size: cover;
+  color: white;
+  background-color: var(--bg, --color-black);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-us section.image {
+  background-position: center center;
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: cover;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1;
+  height: 100vh;
+}
+.about-us section.text {
+  height: 50vh;
+  font-size: 1.5rem;
+}
+.about-us section.heading {
+  z-index: -1;
+  font-size: 1.8rem;
+  transform: translateY(-30vh) translateZ(1px) scale(1.5);
+}
+.about-us section.colour{
+  word-wrap: break-word;
+    color: #186aa0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.about-us .header {
+  /* position: relative; */
+  display: block;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-us .scroll-text{
+    color: #2980B9;
+}
+.about-us .header-mystore{
+font-size: 8rem!important;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.about-us .header-summary{
+padding: 5rem;
+text-align: justify;
+}
+/* media queries */
+
+@media screen and (max-width: 480px) {
+  /* .about-us .header{
+    justify-content: flex-start;
+  } */
+  .about-us .header-summary {
+    padding: 1rem;
+    font-size:0.7rem ;
+  }
+  .about-us .header-mystore {
+    font-size: 2rem!important;
+  }
+  .about-us section.heading {
+    z-index: -1;
+    font-size: 0.5rem;
+    font-weight: bold;
+    transform: translateY(-30vh) translateZ(1px) scale(1.5);
+  }
+  .about-us section.colour {
+    z-index: -1;
+    font-size: 0.5rem;
+    font-weight: bold;
+    transform: translateY(-30vh) translateZ(1px) scale(1.5);
+  }
+}
+@media screen and (max-width: 398px) {
+  /* .about-us .header{
+    justify-content: flex-start;
+  } */
+  
+  .about-us section.colour {
+    
+    font-size: 0.4rem;
+   
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* .about-us .header{
+    justify-content: flex-end;
+  } */
+  .about-us .header-summary {
+    padding: 1rem;
+    font-size:1.1rem ;
+  }
+  .about-us .header-mystore {
+    font-size: 4rem!important;
+  }
+  .about-us section.text {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  /* .about-us .header{
+    justify-content: flex-start;
+  } */
+  
+  .about-us section.colour {
+    
+    font-size: 0.9rem;
+   
+  }
+}
